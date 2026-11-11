@@ -419,12 +419,14 @@ body {
 
 /* Modals */
 .modal-backdrop {
+  display: none !important;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.25s ease;
 }
 
 .modal-backdrop.active {
+  display: flex !important;
   opacity: 1;
   pointer-events: auto;
 }

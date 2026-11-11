@@ -366,6 +366,7 @@ document.addEventListener('DOMContentLoaded', () => {
       ` : ''}
     `;
 
+    quickViewModal.classList.remove('hidden');
     quickViewModal.classList.add('active');
     document.body.style.overflow = 'hidden';
   };
@@ -373,6 +374,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.closeQuickView = () => {
     if (quickViewModal) {
       quickViewModal.classList.remove('active');
+      quickViewModal.classList.add('hidden');
       document.body.style.overflow = 'auto';
     }
   };
@@ -418,6 +420,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (pickupInput) pickupInput.value = pickupDate.toISOString().split('T')[0];
 
     if (rentalModal) {
+      rentalModal.classList.remove('hidden');
       rentalModal.classList.add('active');
       document.body.style.overflow = 'hidden';
     }
@@ -426,6 +429,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.closeRentalModal = () => {
     if (rentalModal) {
       rentalModal.classList.remove('active');
+      rentalModal.classList.add('hidden');
       document.body.style.overflow = 'auto';
     }
   };
@@ -576,6 +580,7 @@ document.addEventListener('DOMContentLoaded', () => {
       };
     }
 
+    videoModal.classList.remove('hidden');
     videoModal.classList.add('active');
     document.body.style.overflow = 'hidden';
   };
@@ -585,6 +590,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const iframe = document.getElementById('video-modal-iframe');
       if (iframe) iframe.src = '';
       videoModal.classList.remove('active');
+      videoModal.classList.add('hidden');
       document.body.style.overflow = 'auto';
     }
   };
@@ -592,6 +598,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Modals helper
   window.openStoreVisitModal = () => {
     if (storeVisitModal) {
+      storeVisitModal.classList.remove('hidden');
       storeVisitModal.classList.add('active');
       document.body.style.overflow = 'hidden';
     }
@@ -600,6 +607,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.closeStoreVisitModal = () => {
     if (storeVisitModal) {
       storeVisitModal.classList.remove('active');
+      storeVisitModal.classList.add('hidden');
       document.body.style.overflow = 'auto';
     }
   };
