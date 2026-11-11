@@ -1,0 +1,574 @@
+/* ==========================================================================
+   BuBa Fashions - Bespoke Editorial & Human-Crafted Boutique Stylesheet
+   Designed for Visakhapatnam's Premier Bridal & 1-Gram Gold Boutique
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Heritage Palette - Deep Forest Emeralds & Antique Brushed Gold */
+  --emerald-950: #04140c;
+  --emerald-900: #072014;
+  --emerald-850: #0b2b1b;
+  --emerald-800: #103824;
+  --emerald-700: #184c32;
+  
+  --gold-antique: #C5A059;
+  --gold-warm: #D8B772;
+  --gold-pale: #F3E7C4;
+  --gold-deep: #8C6D2D;
+  --gold-border: rgba(197, 160, 89, 0.35);
+
+  --parchment: #FAF8F3;
+  --parchment-warm: #F4EFE6;
+  --white: #FFFFFF;
+  
+  --ink-primary: #17211C;
+  --ink-secondary: #4A5650;
+  --ink-muted: #738078;
+
+  /* Typography Scale via Fluid CSS clamp() - Calibrated for Mobile-First & Ultra-Wide */
+  --font-serif-display: 'Cinzel', serif;
+  --font-serif-editorial: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+
+  --text-xs: clamp(0.68rem, 0.65rem + 0.12vw, 0.78rem);
+  --text-sm: clamp(0.8rem, 0.76rem + 0.16vw, 0.88rem);
+  --text-base: clamp(0.9rem, 0.86rem + 0.2vw, 1.02rem);
+  --text-lg: clamp(1rem, 0.94rem + 0.28vw, 1.18rem);
+  --text-xl: clamp(1.12rem, 1.04rem + 0.45vw, 1.38rem);
+  --text-2xl: clamp(1.28rem, 1.15rem + 0.65vw, 1.75rem);
+  --text-3xl: clamp(1.45rem, 1.25rem + 1vw, 2.35rem);
+  --text-4xl: clamp(1.75rem, 1.45rem + 1.6vw, 3.15rem);
+  --text-hero: clamp(1.85rem, 1.45rem + 2vw, 3.85rem);
+}
+
+/* Base Document Reset & Setup */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--parchment);
+  color: var(--ink-primary);
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+
+/* Fluid Boutique Shell - 100% Auto-Adjusting Edge-to-Edge Layout */
+.fluid-shell {
+  width: 100%;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .fluid-shell {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .fluid-shell {
+    padding-left: 1.75rem;
+    padding-right: 1.75rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .fluid-shell {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Typography Hierarchy Classes */
+.font-display {
+  font-family: var(--font-serif-display);
+  letter-spacing: 0.03em;
+}
+
+.font-editorial {
+  font-family: var(--font-serif-editorial);
+}
+
+.font-body {
+  font-family: var(--font-sans);
+}
+
+/* Fluid Heading Utilities */
+.hero-title {
+  font-family: var(--font-serif-editorial);
+  font-size: var(--text-hero);
+  line-height: 1.15;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  overflow-wrap: break-word;
+  word-break: normal;
+  hyphens: manual;
+}
+
+.section-title {
+  font-family: var(--font-serif-editorial);
+  font-size: var(--text-3xl);
+  line-height: 1.22;
+  font-weight: 600;
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
+.card-title {
+  font-family: var(--font-serif-editorial);
+  font-size: var(--text-lg);
+  line-height: 1.3;
+  font-weight: 600;
+}
+
+/* Restrained Antique Gold Text & Accents (No Neon Gradients) */
+.text-gold-antique {
+  color: var(--gold-antique);
+}
+
+.text-gold-warm {
+  color: var(--gold-warm);
+}
+
+.border-gold-subtle {
+  border-color: var(--gold-border);
+}
+
+/* Bespoke Heritage Palette Backgrounds */
+.bg-heritage-emerald {
+  background-color: var(--emerald-900);
+}
+
+.bg-emerald-deep {
+  background-color: var(--emerald-950);
+}
+
+.bg-parchment {
+  background-color: var(--parchment);
+}
+
+.bg-parchment-warm {
+  background-color: var(--parchment-warm);
+}
+
+/* ==========================================================================
+   Bespoke Architectural Atelier Button & Action System (Zero Generic Pills)
+   ========================================================================== */
+
+.btn-atelier-primary,
+.btn-boutique-gold {
+  background: linear-gradient(135deg, #ECC875 0%, #D8B772 45%, #C5A059 85%, #B38E46 100%);
+  color: #0A1C12;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  padding: 0.82rem 1.65rem;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 240, 190, 0.8);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), 0 3px 10px rgba(0, 0, 0, 0.22);
+  transition: all 0.22s cubic-bezier(0.2, 0.8, 0.4, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.btn-atelier-primary:hover,
+.btn-boutique-gold:hover {
+  background: linear-gradient(135deg, #F3E7C4 0%, #E2C27F 50%, #C5A059 100%);
+  color: #05140C;
+  transform: translateY(-1.5px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7), 0 6px 18px rgba(197, 160, 89, 0.35);
+  border-color: #FFFFFF;
+}
+
+.btn-atelier-primary:active,
+.btn-boutique-gold:active {
+  transform: translateY(1px);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.btn-atelier-outline,
+.btn-boutique-outline {
+  background-color: transparent;
+  color: var(--gold-pale);
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  padding: 0.82rem 1.65rem;
+  border-radius: 4px;
+  border: 1px solid rgba(197, 160, 89, 0.65);
+  transition: all 0.22s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-atelier-outline:hover,
+.btn-boutique-outline:hover {
+  background-color: rgba(197, 160, 89, 0.12);
+  color: #FFFFFF;
+  border-color: #ECC875;
+  transform: translateY(-1px);
+}
+
+.btn-atelier-secondary,
+.btn-boutique-secondary {
+  background: linear-gradient(135deg, #0B2B1B 0%, #072014 100%);
+  color: #F3E7C4;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  padding: 0.75rem 1.45rem;
+  border-radius: 4px;
+  border: 1px solid rgba(197, 160, 89, 0.45);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-atelier-secondary:hover,
+.btn-boutique-secondary:hover {
+  background: linear-gradient(135deg, #103824 0%, #0B2B1B 100%);
+  color: #FFFFFF;
+  border-color: #D8B772;
+  transform: translateY(-1px);
+}
+
+/* WhatsApp Action Button - Atelier Edition */
+.btn-atelier-whatsapp,
+.btn-whatsapp-elegant {
+  background: linear-gradient(135deg, #072014 0%, #05140C 100%);
+  color: #F3E7C4;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  padding: 0.78rem 1.45rem;
+  border-radius: 4px;
+  border: 1px solid rgba(197, 160, 89, 0.45);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  cursor: pointer;
+}
+
+.btn-atelier-whatsapp:hover,
+.btn-whatsapp-elegant:hover {
+  background: linear-gradient(135deg, #0B2B1B 0%, #072014 100%);
+  border-color: #D8B772;
+  color: #FFFFFF;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(18, 140, 126, 0.2);
+}
+
+/* Hairline Editorial Dividers */
+.hairline-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, var(--gold-border) 25%, var(--gold-border) 75%, transparent 100%);
+  width: 100%;
+}
+
+.hairline-divider-vertical {
+  width: 1px;
+  background: var(--gold-border);
+}
+
+/* Subtle Archive Label & Museum Tag Styling (Zero Generic Pills) */
+.badge-curated {
+  font-family: var(--font-sans);
+  font-size: 0.62rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  padding: 0.35rem 0.75rem;
+  border-radius: 2px;
+  display: inline-block;
+  backdrop-filter: blur(4px);
+}
+
+.badge-curated-gold {
+  background-color: rgba(7, 32, 20, 0.9);
+  color: #F3E7C4;
+  border: 1px solid rgba(197, 160, 89, 0.6);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+.badge-curated-emerald {
+  background-color: rgba(7, 32, 20, 0.9);
+  color: #D8B772;
+  border: 1px solid rgba(197, 160, 89, 0.45);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+.badge-curated-dark {
+  background-color: rgba(4, 20, 12, 0.92);
+  color: #F3E7C4;
+  border: 1px solid rgba(197, 160, 89, 0.4);
+}
+
+/* Product Card - Clean Architectural Atelier Box */
+.product-card-editorial {
+  background-color: #FFFFFF;
+  border: 1px solid rgba(220, 215, 205, 0.85);
+  border-radius: 6px;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.product-card-editorial:hover {
+  border-color: #C5A059;
+  box-shadow: 0 16px 36px -8px rgba(7, 32, 20, 0.12);
+  transform: translateY(-3px);
+}
+
+.product-card-editorial .card-img-wrap {
+  position: relative;
+  overflow: hidden;
+  background-color: #F8F5EE;
+}
+
+.product-card-editorial .card-img-wrap img {
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.4, 1);
+}
+
+.product-card-editorial:hover .card-img-wrap img {
+  transform: scale(1.05);
+}
+
+/* Accordion Styling for FAQ */
+.faq-item {
+  border-bottom: 1px solid rgba(197, 160, 89, 0.25);
+  transition: background-color 0.2s ease;
+}
+
+.faq-header {
+  cursor: pointer;
+  padding: 1.25rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-serif-editorial);
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--ink-primary);
+}
+
+.faq-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s cubic-bezier(0, 1, 0, 1);
+  font-size: var(--text-sm);
+  color: var(--ink-secondary);
+  line-height: 1.7;
+}
+
+.faq-item.active .faq-content {
+  max-height: 800px;
+  padding-bottom: 1.25rem;
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(45deg);
+}
+
+.faq-icon {
+  transition: transform 0.25s ease;
+  color: var(--gold-antique);
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+/* Modals */
+.modal-backdrop {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.modal-backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-content-box {
+  transform: scale(0.97) translateY(12px);
+  transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.4, 1);
+}
+
+.modal-backdrop.active .modal-content-box {
+  transform: scale(1) translateY(0);
+}
+
+/* Mobile Bottom Navigation Dock */
+.mobile-nav-dock {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 45;
+  background: rgba(7, 32, 20, 0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(197, 160, 89, 0.3);
+  padding: 0.35rem 0.5rem calc(0.35rem + env(safe-area-inset-bottom, 0px));
+}
+
+.mobile-nav-dock a,
+.mobile-nav-dock button {
+  min-height: 48px;
+  touch-action: manipulation;
+}
+
+/* Mobile Filter Tabs Wrapper & Swipe Affordance */
+.filter-tabs-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.filter-tabs-container {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 0.5rem;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding-bottom: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.filter-tabs-container::-webkit-scrollbar {
+  display: none;
+}
+
+.filter-tab-btn {
+  scroll-snap-align: start;
+  flex-shrink: 0;
+  min-height: 38px;
+  touch-action: manipulation;
+  user-select: none;
+}
+
+/* Prevent iOS Mobile Safari Zoom on Input Focus (<16px trigger) */
+@media (max-width: 768px) {
+  input[type="text"],
+  input[type="tel"],
+  input[type="date"],
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+}
+
+/* Telugu Typography & Helper callouts */
+.telugu-helper {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: var(--gold-warm);
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F4EFE6;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C5A059;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #8C6D2D;
+}
+
+/* ==========================================================================
+   Quiet Luxury Editorial Scroll Motion & Filigree Flourishes
+   ========================================================================== */
+
+.editorial-reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.editorial-reveal.is-revealed {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .editorial-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+
+/* Subtle Jewelry Filigree Divider */
+.filigree-flourish {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin: 1.5rem 0;
+}
+
+.filigree-flourish::before,
+.filigree-flourish::after {
+  content: '';
+  height: 1px;
+  width: 50px;
+  background: linear-gradient(90deg, transparent, rgba(197, 160, 89, 0.6), transparent);
+}

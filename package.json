@@ -1,0 +1,21 @@
+{
+  "name": "buba-fashions-web",
+  "version": "1.0.0",
+  "description": "Modern luxury e-commerce and bridal rental booking website for BuBa Fashions, PM Palem, Visakhapatnam",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "buba-fashions",
+    "jewellery",
+    "bridal-rental",
+    "one-gram-gold",
+    "visakhapatnam",
+    "pm-palem"
+  ],
+  "author": "BuBa Fashions",
+  "license": "ISC"
+}
+
